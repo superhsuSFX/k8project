@@ -4,6 +4,10 @@ const keys = require('./keys');
 const express = require('express');
 const bodyParser = require('body-parser');
 const cors = require('cors');
+const tracer = require('signalfx-tracing').init({
+  // Optional Smart Agent or Gateway target.  Default is http://localhost:9080/v1/trace
+  url: 'http://' + process.env.SIGNALFX_AGENT_HOST + ':8080/v1/trace'
+});
 
 const app = express();
 app.use(cors());

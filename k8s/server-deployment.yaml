@@ -14,7 +14,7 @@ spec:
     spec: 
       containers: 
         - name: server
-          image: stephengrider/multi-server
+          image: sfxajhsu/multi-server
           ports:
             - containerPort: 5000
           env: 
@@ -35,4 +35,8 @@ spec:
                 secretKeyRef:
                   name: pgpassword
                   key: PGPASSWORD
-  
+            - name: SIGNALFX_AGENT_HOST
+              valueFrom:
+                fieldRef:
+                  apiVersion: v1
+                  fieldPath: status.hostIP

@@ -5,5 +5,6 @@ module.exports = {
   pgHost: process.env.PGHOST,
   pgDatabase: process.env.PGDATABASE,
   pgPassword: process.env.PGPASSWORD,
-  pgPort: process.env.PGPORT
+  pgPort: process.env.PGPORT,
+  SignalFx_Agent_Host: process.env.SIGNALFX_AGENT_HOST
 };
